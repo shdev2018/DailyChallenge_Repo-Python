@@ -2,6 +2,29 @@ from functools import reduce
 class Probs():
     """class containing problem methods"""
 
+    # cons(a, b) constructs a pair, and car(pair) and cdr(pair) returns the first and last element of that pair. 
+    # For example, car(cons(3, 4)) returns 3, and cdr(cons(3, 4)) returns 4.
+    # With the given implementation of cons, implement car and cdr
+    def prob_10_07_2020(self, a, b):
+        def cons(a, b):
+            def pair(f):
+                return f(a, b)
+            return pair
+    
+        def car(f):
+            def first(a, b):
+                return a
+            return f(first)
+
+        def cdr(f):
+            def last(a, b):
+                return b
+            return f(last)
+
+        print(car(cons(a, b)))
+        print(cdr(cons(a, b)))
+    # Completed in 00:05:37
+
     # Given the root to a binary tree, implement serialize(root), which serializes the tree into a string, 
     # and deserialize(s), which deserializes the string back into the tree.
     def prob_08_07_2020(self):
@@ -35,7 +58,6 @@ class Probs():
             i += 1
         return False
     # Completed in 00:04:37
-
 
 # 08_07_2020
 class Node:
