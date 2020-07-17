@@ -3,11 +3,14 @@ probs = Probs()
 
 #Main
 
+# 17_07_2020
+print(probs.prob_17_07_2020(11, {1, 3, 5}))
+
 # 10_07_2020
-probs.prob_10_07_2020(3, 4)
+# print(probs.prob_10_07_2020(3, 4))
 
 # 08_07_2020
-# probs.prob_08_07_2020()
+# print(probs.prob_08_07_2020())
 
 # 07_07_2020
 # print(probs.prob_07_07_2020([1, 2, 3]))

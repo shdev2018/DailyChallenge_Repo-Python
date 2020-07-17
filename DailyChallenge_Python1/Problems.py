@@ -2,6 +2,20 @@ from functools import reduce
 class Probs():
     """class containing problem methods"""
 
+
+    # There exists a staircase with N steps, and you can climb up either 1 or 2 steps at a time. Given N, write 
+    # a function that returns the number of unique ways you can climb the staircase. The order of the steps matters.
+    # What if, instead of being able to climb 1 or 2 steps at a time, you could climb any number from a set of 
+    # positive integers X? For example, if X = {1, 3, 5}, you could climb 1, 3, or 5 steps at a time.
+    # (assuming you need to get to the top perfectly)
+    def prob_17_07_2020(self, n, X):
+        cache = [0 for _ in range(n + 1)]
+        cache[0] = 1
+        for i in range(n + 1):
+            cache[i] += sum(cache[i - x] for x in X if i - x > 0)
+            cache[i] += 1 if i in X else 0
+        return cache[-1]
+
     # cons(a, b) constructs a pair, and car(pair) and cdr(pair) returns the first and last element of that pair. 
     # For example, car(cons(3, 4)) returns 3, and cdr(cons(3, 4)) returns 4.
     # With the given implementation of cons, implement car and cdr
